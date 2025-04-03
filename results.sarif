@@ -1,96 +1,51 @@
 {
-    "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
-    "version": "2.1.0",
-    "runs": [
-      {
-        "tool": {
-          "driver": {
-            "name": "Grafeas to SARIF Converter",
-            "version": "1.0",
-            "informationUri": "https://grafeas.io/",
-            "rules": [
-              {
-                "id": "CVE-2024-50063",
-                "shortDescription": {
-                  "text": "CVE-2024-50063"
-                },
-                "fullDescription": {
-                  "text": "In the Linux kernel, a vulnerability allows tail calls between progs attached to different hooks, leading to verification bypass."
-                },
-                "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2024-50063",
-                "properties": {
-                  "severity": "HIGH",
-                  "cvssScore": 7.8
-                }
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "GrafeasToSarifConverter",
+          "informationUri": "https://grafeas.io/",
+          "rules": [
+            {
+              "id": "CVE-2024-50063",
+              "name": "linux-vulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-50063"
               },
-              {
-                "id": "CVE-2024-57852",
-                "shortDescription": {
-                  "text": "CVE-2024-57852"
-                },
-                "fullDescription": {
-                  "text": "In the Linux kernel, qcom_scm_get_tzmem_pool() can return NULL, requiring explicit handling to prevent a null-pointer dereference."
-                },
-                "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2024-57852"
+              "fullDescription": {
+                "text": "In the Linux kernel, the following vulnerability has been resolved: bpf: Prevent tail call between progs attached to different hooks..."
               },
-              {
-                "id": "CVE-2024-53219",
-                "shortDescription": {
-                  "text": "CVE-2024-53219"
-                },
-                "fullDescription": {
-                  "text": "A warning in Linux kernel's virtiofs triggered due to excessive memory allocation for DMA operations."
-                },
-                "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2024-53219"
-              },
-              {
-                "id": "CVE-2024-42156",
-                "shortDescription": {
-                  "text": "CVE-2024-42156"
-                },
-                "fullDescription": {
-                  "text": "Wipe all sensitive data from stack for IOCTLs converting clear-key into protected- or secure-key."
-                },
-                "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2024-42156",
-                "properties": {
-                  "severity": "MEDIUM",
-                  "cvssScore": 4.1
+              "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2024-50063",
+              "properties": {
+                "severity": "HIGH"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2024-50063",
+          "message": {
+            "text": "A vulnerability has been found in the Linux kernel."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "europe-west8-docker.pkg.dev/go-play-bccsi-translite/test/python:3.12.9-bookworm"
                 }
               }
-            ]
+            }
+          ],
+          "properties": {
+            "cvssScore": 7.8,
+            "cvssVector": "AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
           }
-        },
-        "results": [
-          {
-            "ruleId": "CVE-2024-50063",
-            "level": "error",
-            "message": {
-              "text": "Vulnerability in Linux kernel allowing tail call between different hooks."
-            }
-          },
-          {
-            "ruleId": "CVE-2024-57852",
-            "level": "warning",
-            "message": {
-              "text": "Handling missing SCM device in Qualcomm firmware."
-            }
-          },
-          {
-            "ruleId": "CVE-2024-53219",
-            "level": "error",
-            "message": {
-              "text": "Virtiofs excessive memory allocation issue."
-            }
-          },
-          {
-            "ruleId": "CVE-2024-42156",
-            "level": "note",
-            "message": {
-              "text": "Ensure sensitive data is wiped from stack in IOCTL operations."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  
+        }
+      ]
+    }
+  ]
+}
