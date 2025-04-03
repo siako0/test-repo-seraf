@@ -26,25 +26,6 @@
         }
       },
       "results": [
-        {
-          "ruleId": "CVE-2024-50063",
-          "message": {
-            "text": "A vulnerability has been found in the Linux kernel."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "europe-west8-docker.pkg.dev/go-play-bccsi-translite/test/python:3.12.9-bookworm"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "cvssScore": 7.8,
-            "cvssVector": "AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-          }
-        }
       ]
     }
   ]
